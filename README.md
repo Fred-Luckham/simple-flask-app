@@ -8,7 +8,9 @@ This is a simple containerised Flask app. It is built with:
 - Flask
 - PostgreSQL
 - Docker
-  \n _Production only:_
+
+_Production only:_
+
 - Nginx
 - Gunicorn
 
