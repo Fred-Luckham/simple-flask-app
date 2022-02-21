@@ -2,6 +2,16 @@
 
 ## About
 
+This is a simple containerised Flask app. It is built with:
+
+- Python
+- Flask
+- PostgreSQL
+- Docker
+  _Production only:_
+- Nginx
+- Gunicorn
+
 ## How to Install and Run
 
 ### Development Container
@@ -17,8 +27,6 @@ $ docker-compose up -d --build
 View it at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
 
 ### Production Container
-
-Uses gunicorn + nginx.
 
 Rename _.env.prod-sample_ to _.env.prod_ and _.env.prod.db-sample_ to _.env.prod.db_, and set your own environment variables.
 Build the images:
