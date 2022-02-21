@@ -8,7 +8,7 @@
 
 This uses the default Flask development server. You can set your own environment variables in _.env.dev_ and _docker-compose.yml_.
 
-Build the development images:
+Build the images:
 
 ```
 $ docker-compose up -d --build
@@ -17,6 +17,23 @@ $ docker-compose up -d --build
 View it at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
 
 ### Production Container
+
+Uses gunicorn + nginx.
+
+Rename _.env.prod-sample_ to _.env.prod_ and _.env.prod.db-sample_ to _.env.prod.db_, and set your own environment variables.
+Build the images:
+
+```
+$ docker-compose -f docker-compose.prod.yml up -d --build
+```
+
+To create/rebuild the database (**This will remove any existing database**):
+
+```
+docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
+```
+
+View it at [http://localhost:1337](http://localhost:1337). To apply changes, the images must be rebuilt.
 
 ## How to Use
 
