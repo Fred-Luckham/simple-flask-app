@@ -2,7 +2,9 @@
 
 ## About
 
-This is a simple containerised Flask app. It is built with:
+This is a simple containerised Flask app. It has a basic dashboard where the user can enter their name and email address, which is stored in a PostgreSQL database, and viewable as a table.
+
+It is built with:
 
 - Python
 - Flask
@@ -24,6 +26,12 @@ Build the images:
 
 ```
 $ docker-compose up -d --build
+```
+
+Stop and remove containers, networks, images, and volumes:
+
+```
+$ docker-compose down -v
 ```
 
 View it at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
