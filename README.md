@@ -74,7 +74,7 @@ $ docker-compose -f docker-compose.prod.yml up -d --build
 To create/rebuild the database (**This will remove any existing database**):
 
 ```
-docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
+$ docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
 ```
 
 View it at [http://localhost:1337](http://localhost:1337). To apply changes, the images must be rebuilt.
