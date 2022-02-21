@@ -42,7 +42,7 @@ $ postgres=# \l
 
 View the web app at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
 
-Input some sample data into the [http://127.0.0.1:1337/addperson](Add User) page, and view it at the [http://127.0.0.1:1337/display](Users) page.
+Input some sample data into the [Add User](http://127.0.0.1:1337/addperson) page, and view it at the [Users](http://127.0.0.1:1337/display) page.
 
 Connect to the database and confirm the inputted data is within the "people" table:
 
