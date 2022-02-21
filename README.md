@@ -81,6 +81,18 @@ View it at [http://localhost:1337](http://localhost:1337). To apply changes, the
 
 ## How to Use
 
+To shutdown the containers without removing volumes:
+
+```
+$ docker-compose down --remove-orphans
+```
+
+To start up the containers without making changes:
+
+```
+$ docker-compose -f docker-compose.prod.yml up -d
+```
+
 ## Licence
 
 MIT License
