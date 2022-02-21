@@ -4,6 +4,20 @@
 
 ## How to Install and Run
 
+### Development Container
+
+This uses the default Flask development server. You can set your own environment variables in _.env.dev_ and _docker-compose.yml_.
+
+Build the development images:
+
+```
+$ docker-compose up -d --build
+```
+
+View it at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
+
+### Production Container
+
 ## How to Use
 
 ## Licence
