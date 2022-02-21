@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h3>About</h3>
     <p>
-        This is a simple Flask app utilising; a PostgreSQL Database, Python, Docker.
+        This is a simple containerised Flask app. It has a basic dashboard where the user can enter their name and email address, which is stored in a PostgreSQL database, and viewable as a table.
     </p>
+    <p>
+        The aim of this project is to create a multi-container three-layer Docker application.
+    </p>
+    <p>
+        It is built with:
+    </p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Python</li>
+        <li class="list-group-item">Flask</li>
+        <li class="list-group-item">  PostgreSQL</li>
+        <li class="list-group-item"> Docker</li>
+        <li class="list-group-item"> Nginx</li>
+        <li class="list-group-item">Gunicorn</li>
+    </ul>
 {% endblock %}

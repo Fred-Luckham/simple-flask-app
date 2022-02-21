@@ -1,3 +1,4 @@
+# Imports
 from flask import (
     Flask,
     request,
@@ -6,6 +7,9 @@ from flask import (
 )
 from flask_sqlalchemy import SQLAlchemy
 
+##########################
+## Define the app and db ##
+###########################
 
 app = Flask(__name__)
 app.config.from_object("project.config.Config")
@@ -21,21 +25,26 @@ class People(db.Model):
         self.pname = pname
         self.email = email
 
+###################
+## Define routes ##
+###################
 
+# The landing page. This will inherit from the base.html template
 @app.route('/')
 def home():
     return render_template("index.html")
 
+# A basic about page
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
+# The input page
 @app.route("/addperson")
 def addperson():
     return render_template("addperson.html")
 
-
+# Database input logic
 @app.route("/personadd", methods=['POST'])
 def personadd():
     pname = request.form["pname"]
@@ -46,6 +55,7 @@ def personadd():
 
     return render_template("addperson.html")
 
+# Display the "people" table as a html table
 @app.route("/display")
 def display():
     #select all people from people
