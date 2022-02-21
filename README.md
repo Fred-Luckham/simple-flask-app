@@ -4,6 +4,8 @@
 
 This is a simple containerised Flask app. It has a basic dashboard where the user can enter their name and email address, which is stored in a PostgreSQL database, and viewable as a table.
 
+The aim of this project is to create a multi-container three-layer Docker application.
+
 It is built with:
 
 - Python
@@ -22,10 +24,36 @@ _Production only:_
 
 This uses the default Flask development server. You can set your own environment variables in _.env.dev_ and _docker-compose.yml_.
 
+_The examples below uses the default container name and DB username. If you have set your own, change as needed_
+
 Build the images:
 
 ```
 $ docker-compose up -d --build
+```
+
+Confirm the database is up and running by connecting and listing it:
+
+```
+$ docker exec -it blog-app_db_1 psql -U postgres
+
+$ postgres=# \l
+```
+
+View the web app at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
+
+Input some sample data into the [http://127.0.0.1:1337/addperson](Add User) page, and view it at the [http://127.0.0.1:1337/display](Users) page.
+
+Connect to the database and confirm the inputted data is within the "people" table:
+
+```
+$ docker exec -it blog-app_db_1 psql -U postgres
+
+$ postgres=# \l
+
+$ postgres=# \c flask-app
+
+$ postgres=# SELECT * FROM people;
 ```
 
 Stop and remove containers, networks, images, and volumes:
@@ -33,8 +61,6 @@ Stop and remove containers, networks, images, and volumes:
 ```
 $ docker-compose down -v
 ```
-
-View it at [http://localhost:5000](http://localhost:5000). Any changes made within the 'web' folder will be applied automatically without having to rebuild the container.
 
 ### Production Container
 
