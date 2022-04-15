@@ -24,7 +24,7 @@ _Production only:_
 
 This uses the default Flask development server. You can set your own environment variables in _.env.dev_ and _docker-compose.yml_.
 
-_The examples below uses the default container name and DB username. If you have set your own, change as needed_
+_The examples below use the default container name and DB username. If you have set your own, change as needed_
 
 Build the images:
 
